@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { getAnimais, getGatos } from "../../servicos/animais";
 import img from "../../imagens/valentim.jpeg"
 import { popIn } from "../Animacoes";
+import Pesquisa from "../Pesquisa";
 
 const animais = await getAnimais();
 const gatos = await getGatos();
@@ -44,24 +45,27 @@ const Botao = styled.a`
   border-radius: 0.25rem;
 `
 
+
+
 function Animais(){
     return(
       <Lista>
+
+        <Pesquisa gatos={animais}/>
 
         {animais.map((animal, i) => (
           
         
             <Card delayAnimacao={Math.min(i*0.5, 5)}>
              
-             <img src={i == 4 ?img : imagensGatos[i]} class="card-img-top"/>
-             <div class="card-body">
-              <h5 class="card-title">{animal.nome}</h5>
-              <p class="card-text"> É um {animal.tipo}</p>
+             <img src={i === 4 ?img : imagensGatos[i]} className="card-img-top" alt={animal.nome}/>
+             <div className="card-body">
+              <h5 className="card-title">{animal.nome}</h5>
+              <p className="card-text"> É um {animal.tipo}</p>
               <Botao href="#" class="btn-primary botao-rosa">Adote me</Botao>
            </div>
          </Card>
             
-          
         ))}
       </Lista>
     )

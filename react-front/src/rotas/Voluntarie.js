@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import Pesquisa from '../componentes/Pesquisa';
-
+import Doacoes from '../componentes/Doacoes';
 
 const AppContainer = styled.div`
   position: relative;
@@ -13,16 +12,19 @@ const MainContainer = styled.main`
   min-width: 100vw; 
 `
 
-function Home() {
-  return (
-    // Contém o container de todo o programa
+function Voluntarie(){
+    return(
     <AppContainer>
+      
       {/*Contém o container entre o cabeçalho e o rodapé*/}
       <MainContainer>
-        
+         <Doacoes/>
       </MainContainer>
+
+      
     </AppContainer>
-  );
+    )
+
 }
 
-export default Home;
+export default Voluntarie;

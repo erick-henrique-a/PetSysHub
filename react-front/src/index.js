@@ -8,6 +8,7 @@ import { createGlobalStyle, styled } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './componentes/Header';
 import Footer from './componentes/Footer';
+import Voluntarie from './rotas/Voluntarie';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -38,6 +39,7 @@ root.render(
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/adote" element={<Adote />} />
+                    <Route path="/voluntarie" element={<Voluntarie />} />
                 </Routes>
                 <Footer />
             </AppContainer>
