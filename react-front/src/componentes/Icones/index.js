@@ -1,4 +1,5 @@
 //TODO: Se não usar mais de um icone retirar a função MAP
+import { Link } from 'react-router-dom';
 import perfil from '../../imagens/perfil.svg'
 
 import styled  from 'styled-components';
@@ -25,9 +26,11 @@ const icones = [perfil];
 function Icones(){
     return(
         <IconesContainer>
+            <Link to={`/login`} >
             {icones.map((icone) => (
                 <Icone  > <img src={icone} alt="icones"></img></Icone>
             ))}
+            </Link>
         </IconesContainer>
     )
 }

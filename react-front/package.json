@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@fontsource/madimi-one": "^5.0.1",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "@supabase/supabase-js": "^2.43.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,9 +14,11 @@
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-qr-code": "^2.0.12",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.8",
+    "supabase": "^1.165.0",
     "typeface-angkor": "^1.1.13",
     "typeface-roboto": "^1.1.13",
     "web-vitals": "^2.1.4"

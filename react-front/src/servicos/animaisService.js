@@ -9,8 +9,8 @@ async function getAnimais(){
     return response.data
 }
 
-async function getAnimalPorId(id){
-    const response = await animaisApi.get(`/${id}`)
+async function getAnimalPorNome(nome){
+    const response = await animaisApi.get(`/${nome}`)
     return response.data
 }
 
@@ -20,9 +20,8 @@ async function getGatos(){
 }
 
 
-
 export{
     getAnimais,
-    getAnimalPorId,
+    getAnimalPorNome,
     getGatos
 }

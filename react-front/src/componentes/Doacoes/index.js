@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import img from '../../imagens/qrcode.jpeg'
+import { TituloPrincipal } from '../Textos'
+import QrCodeComponent from '../QrCodeComponent'
 
 
 const DoacoesContainer = styled.div`
@@ -18,27 +19,12 @@ const TextoDoacao = styled.div`
     margin-left: auto;
     width: 800px;
 `
-const PixContainer = styled.div`
-    width: 600px!important;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-`
-const QrCode = styled.img`
-    width: 500px!important;
-    height: 500px!important;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-`
-
-
+const valorDoUsuario = "gustavoMilane43442434efskfjsfK44443433434343kkkkgggggggggggggggggggggggggggggggggggg";
 
 function Doacoes() {
     return (
         <DoacoesContainer>
-
+            <TituloPrincipal>Como ajudar</TituloPrincipal>
             <TextoDoacao>
                 <p>Para continuarmos ajudando cachorros e gatinhos precisamos de sua ajuda!
                     As doações são utilizadas para alimentar e manter todos os nossos bichinhos confortáveis e saudáveis, sendo feita a compra tanto de ração quanto de brinquedos e caminhas
@@ -55,17 +41,7 @@ function Doacoes() {
             </TextoDoacao>
 
             <br />
-
-            <PixContainer class="card">
-
-                <div class="card-body">
-
-                    <Titulo>Picpay</Titulo>
-
-                </div>
-
-                <QrCode class="card-img-bottom" src={img} alt="pix QrCode"/>
-            </PixContainer>
+            <QrCodeComponent valorQrCode={valorDoUsuario}/>
             <br />
 
             <div class="produtos">
