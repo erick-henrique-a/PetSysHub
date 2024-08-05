@@ -3,15 +3,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import ReactDOM from 'react-dom/client';
 import Home from './rotas/Home';
 import Adote from './rotas/Adote';
+import Voluntarie from './rotas/Voluntarie';
+import Animal from './rotas/Animal';
+import Administração from './rotas/Administracao';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle, styled } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './componentes/Header';
 import Footer from './componentes/Footer';
 import Autorizacao from './componentes/Autorizacao';
-import Voluntarie from './rotas/Voluntarie';
-import Animal from './rotas/Animal';
-import Administração from './rotas/Administracao';
+
 
 
 const GlobalStyle = createGlobalStyle`
