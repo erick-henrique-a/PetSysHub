@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Pesquisa from '../componentes/Pesquisa';
+import Banner from '../componentes/Banner';
 
 
 const AppContainer = styled.div`
@@ -19,7 +19,7 @@ function Home() {
     <AppContainer>
       {/*Contém o container entre o cabeçalho e o rodapé*/}
       <MainContainer>
-        
+        <Banner/>        
       </MainContainer>
     </AppContainer>
   );

@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { getAnimais, getGatos } from "../../servicos/animais";
+import { getAnimais, getGatos } from "../../servicos/animaisService";
 import img from "../../imagens/valentim.jpeg"
 import { popIn } from "../Animacoes";
 import Pesquisa from "../Pesquisa";
+import { Link } from "react-router-dom";
 
 const animais = await getAnimais();
 const gatos = await getGatos();
@@ -61,8 +62,10 @@ function Animais(){
              <img src={i === 4 ?img : imagensGatos[i]} className="card-img-top" alt={animal.nome}/>
              <div className="card-body">
               <h5 className="card-title">{animal.nome}</h5>
-              <p className="card-text"> É um {animal.tipo}</p>
-              <Botao href="#" class="btn-primary botao-rosa">Adote me</Botao>
+              <p className="card-text"> É um {animal.especie}</p>
+              <Botao>
+                <Link to={`/adote/${animal.nome.toLowerCase()}`} href="#" class="btn-primary botao-rosa">Adote me</Link>
+              </Botao>
            </div>
          </Card>
             

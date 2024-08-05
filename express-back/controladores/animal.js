@@ -1,10 +1,10 @@
 const fs = require("fs")
 
-const {getTodosOsAnimais, getAnimalPorId} = require("../servicos/animal")
+const {getTodosOsAnimais, getAnimalPorNome} = require("../servicos/animal")
 
-function getAnimais(req,res){
+async function getAnimais(req,res){
     try{
-        const animais = getTodosOsAnimais();
+        const animais = await getTodosOsAnimais();
         res.status(200);
         res.send(animais);
         
@@ -14,16 +14,16 @@ function getAnimais(req,res){
     }
 }
 
-function getAnimal(req, res){
+async function getAnimal(req, res){
     try{
-        const id = req.params.id
-        if (id && Number(id)){
-            const animal = getAnimalPorId(id)
+        const nome = req.params.nome
+        if (nome){
+            const animal = await getAnimalPorNome(nome)
             res.send(animal)
             return
         }
         res.status(422)
-        res.send("Id inválido")
+        res.send("Nome inválido")
 
     } catch(error){
         res.status(500)

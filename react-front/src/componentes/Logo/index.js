@@ -1,4 +1,4 @@
-import logoSvg from '../../imagens/logo.svg';
+import logoSvg from '../../imagens/novaLogo.svg';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 import { TextoLogo } from '../Textos';
@@ -10,7 +10,7 @@ const LogoContainer = styled.div`
     
 `
 const LogoImagem = styled.img`
-    height: 55px;
+    height: 61px;
     
 `
 
