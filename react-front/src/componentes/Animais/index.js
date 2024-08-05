@@ -4,7 +4,6 @@ import img from "../../imagens/valentim.jpeg"
 import { popIn } from "../Animacoes";
 import Pesquisa from "../Pesquisa";
 import { Link } from "react-router-dom";
-require('dotenv').config()
 
 const animais = await getAnimais();
 const gatos = await getGatos();
