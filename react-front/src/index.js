@@ -6,7 +6,6 @@ import Adote from './rotas/Adote';
 import Voluntarie from './rotas/Voluntarie';
 import Animal from './rotas/Animal';
 import Administração from './rotas/Administracao';
-import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle, styled } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './componentes/Header';
@@ -35,28 +34,23 @@ const AppContainer = styled.div`
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <GlobalStyle/>
-            <AppContainer>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/adote" element={<Adote />} />
-                    <Route path="/voluntarie" element={<Voluntarie />} />
-                    <Route path="/login" element={<Autorizacao/>}/>
-                    <Route path="/administracao" element={<Administração/>}/>
-                    <Route path="/adote/:animalNome" element={<Animal/>} />
-                </Routes>
-                <Footer />
-            </AppContainer>
+  <React.StrictMode>
+    <BrowserRouter>
+      <GlobalStyle />
+      <AppContainer>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/adote" element={<Adote />} />
+          <Route path="/voluntarie" element={<Voluntarie />} />
+          <Route path="/login" element={<Autorizacao />} />
+          <Route path="/administracao" element={<Administração />} />
+          <Route path="/adote/:animalNome" element={<Animal />} />
+        </Routes>
+        <Footer />
+      </AppContainer>
 
-        </BrowserRouter>
+    </BrowserRouter>
 
-    </React.StrictMode>
+  </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

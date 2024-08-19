@@ -64,7 +64,7 @@ function Animais(){
               <h5 className="card-title">{animal.nome}</h5>
               <p className="card-text"> É um {animal.especie}</p>
               <Botao>
-                <Link to={`/adote/${animal.nome.toLowerCase()}`} href="#" class="btn-primary botao-rosa">Adote me</Link>
+                <Link to={`/adote/${animal.nome.toLowerCase()}`} href="#" class="btn-primary botao-rosa">Adote-me</Link>
               </Botao>
            </div>
          </Card>

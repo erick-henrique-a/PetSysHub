@@ -5,6 +5,7 @@ const {getTodosOsAnimais, getAnimalPorNome} = require("../servicos/animal")
 async function getAnimais(req,res){
     try{
         const animais = await getTodosOsAnimais();
+        console.log(animais)
         res.status(200);
         res.send(animais);
         
