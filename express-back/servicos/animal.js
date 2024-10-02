@@ -7,7 +7,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 const fs = require("fs")
 
 async function getTodosOsAnimais(){
-    const{data, error} = await supabase.from("animais").select("*");
+    const{data, error} = await supabase.from("animais").select("*").eq("adotado", false);
     if (error) {
         console.error("Erro buscando os animais:", error.message);
         return [];

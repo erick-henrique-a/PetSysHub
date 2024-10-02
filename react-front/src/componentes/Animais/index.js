@@ -1,14 +1,12 @@
 import styled from "styled-components";
-import { getAnimais, getGatos } from "../../servicos/animaisService";
-import img from "../../imagens/valentim.jpeg"
+import { getAnimais} from "../../servicos/animaisService";
 import { popIn } from "../Animacoes";
 import Pesquisa from "../Pesquisa";
 import { Link } from "react-router-dom";
 
 const animais = await getAnimais();
-const gatos = await getGatos();
 
-const imagensGatos = gatos.map(gato => gato.url);
+const imagensUrl = "https://ysqzfvxryhxekhgrjkzr.supabase.co/storage/v1/object/public/fotos-animais/"
 
 const Lista = styled.div`
   display: flex;
@@ -26,7 +24,6 @@ const Card = styled.div`
   width: 18rem;
   border-radius: 0.25rem;
 `
-
 const Botao = styled.a`
   display: inline-block;
   font-weight: 400;
@@ -59,10 +56,9 @@ function Animais(){
         
             <Card delayAnimacao={Math.min(i*0.5, 5)}>
              
-             <img src={i === 4 ?img : imagensGatos[i]} className="card-img-top" alt={animal.nome}/>
+             <img src={imagensUrl + animal.nome.toLowerCase() + ".jpeg"} className="card-img-top" alt={animal.nome}/>
              <div className="card-body">
               <h5 className="card-title">{animal.nome}</h5>
-              <p className="card-text"> É um {animal.especie}</p>
               <Botao>
                 <Link to={`/adote/${animal.nome.toLowerCase()}`} href="#" class="btn-primary botao-rosa">Adote-me</Link>
               </Botao>

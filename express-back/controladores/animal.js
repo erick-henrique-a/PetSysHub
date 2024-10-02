@@ -14,7 +14,6 @@ async function getAnimais(req,res){
         res.send(error.message)
     }
 }
-
 async function getAnimal(req, res){
     try{
         const nome = req.params.nome

@@ -3,6 +3,8 @@ import { createClient } from '@supabase/supabase-js'
 import { useState, useEffect } from 'react'
 import Sair from "../componentes/Sair";
 import { useNavigate } from "react-router-dom";
+import CadastroAnimal from "../componentes/CadastroAnimal";
+import Solicitacoes from "../componentes/Solicitacoes";
 
 const supabaseUrl = 'https://ysqzfvxryhxekhgrjkzr.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlzcXpmdnhyeWh4ZWtoZ3Jqa3pyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxMTQ1OTEsImV4cCI6MjAzMDY5MDU5MX0.TnRSA9aR99HHWffExwfHZpLfIenJWz2YDVnn1wX4QDM'
@@ -23,6 +25,8 @@ function Administração() {
     <div>
       <h1>Administração</h1>
       <QrCodeGenerator />
+      <CadastroAnimal />
+      <Solicitacoes />
       <Sair />
     </div>
   );
