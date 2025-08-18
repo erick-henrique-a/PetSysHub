@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { getAnimais} from "../../servicos/animaisService";
+import { getAnimaisDisponiveis} from "../../servicos/animaisService";
 import { popIn } from "../Animacoes";
 import Pesquisa from "../Pesquisa";
 import { Link } from "react-router-dom";
 
-const animais = await getAnimais();
+const animais = await getAnimaisDisponiveis();
 
 const imagensUrl = "https://ysqzfvxryhxekhgrjkzr.supabase.co/storage/v1/object/public/fotos-animais/"
 

@@ -1,7 +1,12 @@
 import axios from "axios";
 
 const animaisApi = axios.create({baseURL: "http://localhost:8000/animais"})
-const catApi = axios.create({baseURL: "https://api.thecatapi.com/v1/images/search?limit=10&mime_types=jpg&size=med&api_key=live_dZKzMmEM3Uej88qsiSdvejI8TDzJtcXzM2zzDihvJQEVoH4Smdba9k7erDrk17lN"})
+
+async function getAnimaisDisponiveis(){
+    const response = await animaisApi.get('/disponiveis');
+
+    return response.data
+}
 
 async function getAnimais(){
     const response = await animaisApi.get('/');
@@ -14,14 +19,26 @@ async function getAnimalPorNome(nome){
     return response.data
 }
 
-async function getGatos(){
-    const response = await catApi.get(`/`)
+async function getSolicitacoes(){
+    const response = await animaisApi.get('/solicitacoes');
     return response.data
 }
+async function patchAceitarSolicitacao(id){
+    const response = await animaisApi.patch(`/solicitacoes/aceitar/${id}`);
+    return response.data
+}
+async function patchRecusarSolicitacao(id){
+    const response = await animaisApi.patch(`/solicitacoes/recusar/${id}`);
+    return response.data
+}
+
 
 
 export{
     getAnimais,
     getAnimalPorNome,
-    getGatos
+    getAnimaisDisponiveis,
+    getSolicitacoes,
+    patchAceitarSolicitacao,
+    patchRecusarSolicitacao
 }
